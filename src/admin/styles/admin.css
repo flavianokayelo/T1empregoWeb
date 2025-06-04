@@ -1,0 +1,125 @@
+/* Variáveis */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+  --warning-color: #ffc107;
+  --bg-color: #f4f6f8;
+  --text-color: #333;
+  --bubble-radius: 18px;
+}
+
+/* Layout */
+.admin-layout {
+  display: flex;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  position: relative;
+}
+
+
+
+.admin-main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-dashboard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.card-dashboard:hover {
+  transform: translateY(-5px);
+}
+
+.card-dashboard.primary { border-left: 6px solid var(--primary-color); }
+.card-dashboard.secondary { border-left: 6px solid var(--secondary-color); }
+.card-dashboard.warning { border-left: 6px solid var(--warning-color); }
+
+.card-titulo {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.card-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.dashboard-title{
+  margin-bottom: 4rem !important;
+  text-align: center;
+  color: var(--primary-color);
+}
+/* Botão Hambúrguer */
+.hamburger-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  z-index: 1001;
+  display: none;
+}
+
+/* Fechar Sidebar */
+.close-sidebar {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--text-color);
+  display: none;
+}
+
+/* Mobile Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .hamburger-button {
+    display: block;
+  }
+
+  .close-sidebar {
+    display: block;
+  }
+
+  .admin-main {
+    padding: 1.2rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}

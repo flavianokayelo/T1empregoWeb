@@ -1,0 +1,109 @@
+/* Conversations.css */
+.conversations-container {
+  padding: 16px;
+  max-width: 600px;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 12rem !important;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #225b79;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.conversation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.conversation-item:hover {
+  background-color: #e9ecef;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  border: 2px solid #4285F4;
+}
+
+.conversation-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.conversation-info strong {
+  font-size: 1.1rem;
+  color: #333;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.conversation-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-info small {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+
+/* Mobile-first responsividade */
+@media (min-width: 768px) {
+  .conversations-container {
+    padding: 24px;
+    
+  }
+
+  .conversation-item {
+    padding: 16px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .conversation-info strong {
+    font-size: 1.2rem;
+  }
+
+  .conversation-info p {
+    font-size: 1rem;
+  }
+}
+
+/*Mobile*/
+@media (max-width:720px){
+  .conversations-container{
+    margin-top: 8rem !important;
+    padding: 0.8rem !important;
+  }
+  .conversation-info{
+    margin-left: 0.5rem !important;
+  }
+}

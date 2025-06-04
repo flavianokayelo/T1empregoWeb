@@ -1,0 +1,39 @@
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+}
+
+.create-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  margin-top: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-button:hover {
+  background-color: #2f6bd1;
+}
+
+@media (max-width:720px){
+  .create-button{
+    padding: 0.6rem !important;
+    margin-top: 1rem !important;
+  }
+}

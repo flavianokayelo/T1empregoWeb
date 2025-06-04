@@ -1,0 +1,262 @@
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+}
+
+.header-container {
+  background-color: white;
+  padding-top: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row !important;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+.rightSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-right: 2rem;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logotipo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logoText {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bell {
+  color: #333;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+.profile-pic:hover {
+  border-color: #4285F4;
+}
+/* para tellas que comeca do tablet em diante*/
+@media (min-width:720px){
+
+    .tabs-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px 16px;
+    overflow-x: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 1rem;
+  }
+}
+/*MObile*/
+@media (max-width: 720px) {
+  .logoText {
+    display: block;
+  }
+
+  .header {
+    padding: 10px 15px;
+    margin-bottom: 1rem !important;
+  }
+
+  .logotipo {
+    height: 28px;
+    width: 28px;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+  .notification-count{
+    display: flex !important;
+     width: 1.6rem !important;
+     height: 1.6rem !important;
+     border-radius: 1rem !important;
+     align-items: center !important;
+     justify-content: center !important;
+  }
+  .tabs-container{
+    border: none;
+    margin-top: 1rem !important;
+
+  }
+  .header-container{
+     padding: 0.5rem !important;
+   
+  }
+  
+
+  
+}
+
+/* Tabs */
+.tabs-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px 16px;
+  overflow-x: auto;
+  margin-top: 0 !important;
+  margin-bottom: 0%;
+}
+
+.tab-button {
+  flex: 0 1 auto;
+  max-width: 120px; /* ou outro valor desejado */
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.tab-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100px; /* ajuste conforme necessário */
+}
+
+
+.tab-text.active {
+  color: #4285F4;
+  font-weight: 700;
+}
+
+.active-indicator {
+  height: 3px;
+  width: 20px;
+  background-color: #4285F4;
+  border-radius: 2px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  
+
+  
+  .tab-button {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .tab-text {
+    font-size: 16px;
+    color: gray;
+    font-weight: 400;
+  }
+  
+  .tab-text.active {
+    color: #4285F4;
+    font-weight: 700;
+  }
+  
+  .active-indicator {
+    height: 3px;
+    width: 20px;
+    background-color: #4285F4;
+    border-radius: 2px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .category-banner {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 16px;
+  gap: 16px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  margin-top: 1rem;
+}
+
+.category-banner::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.category-item {
+  flex: 0 0 auto;
+  font-size: 16px;
+  color: gray;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.category-item.active {
+  color: #4285F4;
+  font-weight: 700;
+}
+
+.active-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #4285F4;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+.notification-icon {
+  position: relative;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.notification-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}

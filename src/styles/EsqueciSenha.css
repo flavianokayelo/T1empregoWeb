@@ -1,0 +1,120 @@
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #627b88;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --white-bg: rgba(255, 255, 255, 0.9);
+  --success-color: #00cc99;
+  --error-color: #ff5e5e;
+}
+
+.BBSQ {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.senha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.form-box {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 30px 25px;
+  max-width: 400px;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form-box h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.form-box p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  background: var(--white-bg);
+  color: #000;
+}
+
+.form-box input:focus {
+  border: 2px solid var(--primary-color);
+}
+
+.form-box button {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-box button:hover {
+  background: #3367d6; /* versão mais escura do primary */
+}
+
+.status-msg {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+}
+
+.status-msg.green {
+  color: var(--success-color);
+}
+
+.status-msg.red {
+  color: var(--error-color);
+}
+
+@media (max-width: 720px) {
+  .form-box {
+    padding: 25px 20px;
+  }
+
+  .form-box h2 {
+    font-size: 20px;
+  }
+  .BBSQ{
+    padding: 0.8rem !important;
+  }
+  .form-box{
+     padding: 1rem !important;
+  }
+  .form-box input{
+    padding: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .Something{
+    margin: 1rem !important;
+  }
+}

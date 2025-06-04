@@ -1,0 +1,56 @@
+/* Variáveis */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+  --warning-color: #ffc107;
+  --bg-color: #f4f6f8;
+  --text-color: #333;
+  --bubble-radius: 18px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+.sidebar {
+  width: 240px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #2e6b90;
+}
+
+.sidebar nav a:hover {
+  background-color: #1c4a64;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.admin-main {
+  flex-grow: 1;
+  padding: 20px;
+  background: #f5f6fa;
+}
+.sidebar h2{
+ color: white !important;
+}

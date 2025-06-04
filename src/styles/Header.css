@@ -1,0 +1,64 @@
+.header-container {
+    background-color: white;
+    padding-top: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+  
+  .logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .tabs-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px 16px;
+    overflow-x: auto;
+  }
+  
+  .tab-button {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .tab-text {
+    font-size: 16px;
+    color: gray;
+    font-weight: 400;
+  }
+  
+  .tab-text.active {
+    color: #4285F4;
+    font-weight: 700;
+  }
+  
+  .active-indicator {
+    height: 3px;
+    width: 20px;
+    background-color: #4285F4;
+    border-radius: 2px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

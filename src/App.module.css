@@ -1,0 +1,36 @@
+/* Centraliza o conteúdo no centro da tela */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+.app {
+  font-family: 'Segoe UI', sans-serif;
+  color: #212121;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 1rem;
+  }
+
+  .app {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  /* Exemplo de ajustes de padding e margens em componentes internos */
+  .header, .filterBar, .section {
+    padding: 0;
+  }
+}

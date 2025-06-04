@@ -1,0 +1,74 @@
+/* Section.module.css */
+.section {
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.carouselWrapper {
+  overflow: hidden; /* Esconde o conteúdo fora da área visível */
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease; /* Transição suave */
+  gap: 1rem;
+}
+
+.cardWrapper {
+  flex: 0 0 100%; /* Exibe um card por vez no mobile */
+}
+
+/* Controles de navegação */
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.controlButton {
+  background-color: #2a8cff;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.controlButton:hover {
+  background-color: #006bb3;
+}
+
+/* Responsividade para 3 cards em telas maiores */
+@media (min-width: 768px) {
+  .carouselWrapper {
+    /* Define a altura do carrossel */
+    height: 250px; 
+  }
+
+  .carousel {
+    gap: 1.5rem;
+  }
+
+  .cardWrapper {
+    flex: 0 0 calc(33.33% - 1.5rem); /* Exibe 3 cards por vez em telas grandes */
+  }
+}
+
+@media (max-width: 767px) {
+  .carouselWrapper {
+    /* Ajusta a altura do carrossel */
+    height: 250px;
+  }
+
+  .cardWrapper {
+    flex: 0 0 100%; /* Exibe 1 card por vez em telas pequenas */
+  }
+}

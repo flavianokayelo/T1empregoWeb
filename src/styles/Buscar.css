@@ -1,0 +1,130 @@
+/* Buscar.css */
+
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+}
+
+.buscar-container {
+  padding: 40px 10px 15px;
+  margin-top: 100px !important;
+  margin-bottom: 130px !important;
+  min-height: 100vh;
+  background-color: #fff !important;
+}
+
+.buscar-wrapper {
+  max-width: 600px;
+  margin: auto;
+}
+
+.buscar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+.buscar-content {
+  padding: 15px 10px;
+  margin-bottom: 3rem !important;
+}
+
+/* Estilo padrão (mobile first) */
+.buscar-searchbox {
+  position: fixed;
+  top: 6rem; /* Altura do Header */
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem !important;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buscar-searchbox input {
+  margin-left: 10px;
+  flex: 1;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  color: #333;
+}
+
+.buscar-servicos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6rem;
+  padding-bottom: 30px;
+}
+
+.buscar-info {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Responsivo: telas até 480px */
+@media (max-width: 480px) {
+  .buscar-title {
+    font-size: 1.25rem;
+  }
+
+  .buscar-searchbox {
+    padding: 8px 10px;
+  }
+
+  .buscar-searchbox input {
+    font-size: 14px;
+  }
+}
+
+/* Responsivo: tablets até 720px */
+@media (max-width: 720px) {
+  .buscar-container {
+    padding: 0.8rem !important;
+  }
+
+  .buscar-searchbox input {
+    padding: 0.5rem !important;
+  }
+
+  .buscar-content {
+    margin-top: -1rem !important;
+  }
+
+  .buscar-servicos {
+    margin-top: 5rem !important;
+  }
+}
+
+/* NOVO: Telas maiores que 720px (desktop) */
+@media (min-width: 721px) {
+  .buscar-searchbox {
+     position: fixed;
+  top: 13rem !important; /* Altura do Header */
+  left: 17.50rem !important;
+  right: 19.50rem !important;
+  z-index: 100;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem !important;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem !important;
+  }
+
+  .buscar-servicos {
+    margin-top: 10rem !important;
+  }
+}

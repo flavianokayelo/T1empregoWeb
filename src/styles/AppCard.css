@@ -1,0 +1,42 @@
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+  --warning-color:#ffc107;
+  
+}
+.online {
+  color: gray !important;
+  font-size: 0.8rem !important;
+}
+
+.online.ativo {
+  color: green !important;
+  font-weight: bold !important;
+}
+
+.listaAppCard{
+ 
+  min-width: 140px;
+  min-height: 7rem !important;
+  padding: 0.5rem !important;
+}
+.CardContanermOa{
+flex: 0 0 auto;
+scroll-snap-align: start;
+background: #fff;
+border-radius: 12px;
+padding: 0.75rem !important;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+cursor: pointer;
+width: 100%;
+height: 100% !important;
+justify-content: space-between !important;
+flex-direction: column !important;
+align-items: center !important;
+padding: 0.2rem !important;
+border: 1px solid var(--primary-color) !important;
+
+    }

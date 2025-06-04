@@ -1,0 +1,375 @@
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+}
+
+.avaliacoes-container {
+  max-width: 700px;
+  margin-top: 2rem;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.avaliacoes-container h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.media-nota {
+  font-size: 18px;
+  color: #f39c12;
+}
+
+.grafico-estrelas {
+  margin-bottom: 20px;
+}
+
+.barra-linha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.barra-linha span:first-child {
+  width: 40px;
+  text-align: right;
+}
+
+.barra {
+  flex: 1;
+  background: #eee;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.preenchimento {
+  height: 100%;
+  background: #f39c12;
+  transition: width 0.3s ease-in-out;
+}
+
+.avaliacao-form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  min-height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  align-self: flex-start;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: var(--secondary-color);
+}
+
+.avaliacoes-lista {
+  max-height: 500px; /* ou ajuste conforme necessário */
+  overflow-y: auto;
+  padding-right: 10px;
+  position: relative;
+}
+
+
+.avaliacao-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.avaliador {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avaliador img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.avaliador strong {
+  font-size: 16px;
+}
+
+.avaliador p {
+  font-size: 12px;
+  color: #777;
+  margin: 2px 0 0 0;
+}
+
+.estrelas {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.comentario {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.reacoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.avaliacao-acoes {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-editar,
+.btn-apagar {
+  padding: 6px 10px;
+  margin-right: 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background: #2ecc71;
+  color: white;
+  border: none;
+}
+
+.btn-editar:hover {
+  background: #27ae60;
+}
+
+.btn-apagar {
+  background: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.btn-apagar:hover {
+  background: #c0392b;
+}
+
+.rodaAv {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* estilo do modal confirmar apagar */
+.ModalAV {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.ModalAV > .ModalContentAV {
+  background: #fff !;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem 1rem 0 0;
+  padding: 2rem;
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.ModalContentAV h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.ModalContentAV p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.ModalContainerBtn {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-sim,
+.btn-nao {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-sim {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-sim:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-nao {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-nao:hover {
+  background-color: #d9362d;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/*Mobile*/
+@media (max-width:720px){
+.avaliacoes-container{
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  
+  
+}
+.Edi1{
+  padding: 1rem !important;
+}
+.grafico-estrelas{
+  padding: 0.8rem !important;
+}
+.avaliacao-form{
+   padding: 0.8rem !important; 
+}
+.Edit2{
+  margin: 1rem !important;
+}
+.DeixaC{
+  padding: 1rem !important;
+  border-radius: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+.EnviarAva{
+  padding: 0.6rem !important;
+}
+.avaliacoes-lista{
+  padding: 0.8rem !important;
+
+}
+.avaliacao-card{
+   margin-bottom: 1rem !important; 
+   padding: 0.8rem !important;
+}
+.avaliador{
+  margin-right: 1rem !important;
+}
+.UserVAN{
+  margin: 1rem !important;
+}
+.estrelas{
+  margin-bottom: 1rem !important;
+}
+.btnReact{
+  margin-right: 1rem !important;
+}
+.QtPer{
+  padding: 0.8rem !important;
+}
+
+}
+
+/* Responsivo */
+@media (min-width: 640px) {
+  .Modal {
+    align-items: center;
+  }
+
+  .Modal > .ModalContent {
+    border-radius: 1rem;
+  }
+}
+.Edi1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-top: 0.7rem;
+}
+.Edi2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem !important;
+  margin-top: 0.7rem;
+}
+.Edit2Label{
+  font-size: 12pt;
+  margin-bottom: 1rem;
+}
+.stars2{
+  margin-top: 1rem !important;
+  margin-bottom: 0.8rem;
+}

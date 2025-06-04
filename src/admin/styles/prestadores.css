@@ -1,0 +1,230 @@
+.container-prestadores {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.titulo {
+  font-size: 28px;
+  color: #225b79;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tabela-container {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.tabela-prestadores {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.tabela-prestadores th,
+.tabela-prestadores td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-prestadores th {
+  background-color: #4285F4;
+  color: white;
+}
+
+.tabela-prestadores tr:hover {
+  background-color: #f1f1f1;
+}
+
+.status-ativo {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.status-inativo {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.btn-ver,
+.btn-editar,
+.btn-excluir {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.btn-ver {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-editar {
+  background-color: #ffc107;
+  color: black;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-ver:hover,
+.btn-editar:hover,
+.btn-excluir:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 22px;
+  }
+
+  .tabela-prestadores th,
+  .tabela-prestadores td {
+    padding: 10px 12px;
+  }
+
+  .btn-ver,
+  .btn-editar,
+  .btn-excluir {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.input-pesquisa,
+.select-profissao {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 48%;
+  max-width: 350px;
+  transition: border 0.3s;
+}
+
+.input-pesquisa:focus,
+.select-profissao:focus {
+  border-color: #4285F4;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .input-pesquisa,
+  .select-profissao {
+    width: 100%;
+  }
+}
+
+.email-link {
+  background: none;
+  border: none;
+  color: #4285F4;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1em;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-content textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1em;
+  resize: none;
+}
+
+.modal-botoes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-enviar {
+  background-color: #4285F4;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #ccc;
+  color: black;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.container-prestadores {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* botão toggle sidebar */
+.btn-toggle-sidebar {
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* layout com sidebar ao lado */
+.content-with-sidebar {
+  display: flex;
+  gap: 20px;
+}
+
+/* define tamanho fixo para sidebar */
+.content-with-sidebar > div:first-child {
+  width: 250px; /* ajuste conforme o tamanho do sidebar */
+}
+
+/* conteúdo principal ocupa o resto do espaço */
+.main-content {
+  flex: 1;
+}
+
+/* resto do seu CSS atual permanece igual */

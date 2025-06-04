@@ -1,0 +1,271 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { FaStar, FaThumbsUp, FaThumbsDown, FaEdit, FaTrash } from 'react-icons/fa';
+import './AvaliacoesPlayStore.css';
+import userImg from '../assets/user_male.jpg';
+import Modal from './Modal';
+
+const AvaliacoesPlayStore = ({ username, userId, currentUserId }) => {
+  const [avaliacoes, setAvaliacoes] = useState([]);
+  const [averageRating, setAverageRating] = useState(0);
+  const [ratingCounts, setRatingCounts] = useState([0, 0, 0, 0, 0]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState(null);
+  const [editingId, setEditingId] = useState(null);
+  const [editingComentario, setEditingComentario] = useState('');
+  const [editingRating, setEditingRating] = useState(0);
+  const textareaRef = useRef(null);
+
+  useEffect(() => {
+    async function fetchAvaliacoes() {
+      const res = await fetch('http://localhost/t1/api/get_reviews.php', {
+        method: 'POST',
+        body: JSON.stringify({ userid: userId }),
+      });
+      const data = await res.json();
+      setAvaliacoes(data);
+
+      if (Array.isArray(data) && data.length > 0) {
+        const total = data.length;
+        const soma = data.reduce((sum, a) => sum + a.rating, 0);
+        setAverageRating((soma / total).toFixed(1));
+
+        const counts = [0, 0, 0, 0, 0];
+        data.forEach((a) => counts[a.rating - 1]++);
+        setRatingCounts(counts);
+      } else {
+        setAverageRating(0);
+        setRatingCounts([0, 0, 0, 0, 0]);
+      }
+    }
+
+    if (userId) fetchAvaliacoes();
+  }, [userId]);
+
+  useEffect(() => {
+    if (editingId && textareaRef.current) {
+      textareaRef.current.focus();
+    }
+  }, [editingId]);
+
+  const handleDelete = async (id) => {
+    const res = await fetch('http://localhost/t1/api/delete_review.php', {
+      method: 'POST',
+      body: JSON.stringify({ postid: id, userid: currentUserId }),
+    });
+    const result = await res.json();
+    if (result.success) {
+      setAvaliacoes(avaliacoes.filter(a => a.id !== id));
+      setShowModal(false);
+    }
+  };
+
+  const handleEdit = (a) => {
+    setEditingId(a.id);
+    setEditingComentario(a.comentario);
+    setEditingRating(a.rating);
+  };
+
+  const enviarEdicao = async () => {
+    const res = await fetch('http://localhost/t1/api/post_review.php', {
+      method: 'POST',
+      body: JSON.stringify({
+        id: editingId,
+        userid: currentUserId,
+        quem: userId,
+        rating: editingRating,
+        comentario: editingComentario,
+      }),
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      setAvaliacoes(avaliacoes.map(a =>
+        a.id === editingId ? { ...a, rating: editingRating, comentario: editingComentario } : a
+      ));
+      setEditingId(null);
+      setEditingComentario('');
+      setEditingRating(0);
+    }
+  };
+
+  return (
+    <div className="avaliacoes-container">
+      <h3>Avaliações para {username} <span className="media-nota">({averageRating} ★)</span></h3>
+
+      <div className="avaliacoes-lista">
+        {avaliacoes.map((a) => (
+          <div key={a.id} className="avaliacao-card">
+            <div className="avaliador">
+              <img
+                src={
+                  a.user?.avatar?.includes('http')
+                    ? a.user.avatar
+                    : `http://localhost/t1/${a.user?.avatar || userImg}`
+                }
+                alt="avatar"
+              />
+              <div>
+                <strong>{a.user?.name || 'Usuário'}</strong>
+                <p>{a.user?.location || ''}</p>
+              </div>
+            </div>
+
+            {editingId === a.id ? (
+              <>
+                <div className="stars">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <FaStar
+                      key={i}
+                      onClick={() => setEditingRating(i)}
+                      color={i <= editingRating ? 'orange' : 'lightgray'}
+                      style={{ cursor: 'pointer' }}
+                    />
+                  ))}
+                </div>
+                <textarea
+                  ref={textareaRef}
+                  value={editingComentario}
+                  onChange={(e) => setEditingComentario(e.target.value)}
+                />
+                <button onClick={enviarEdicao}>Salvar</button>
+                <button onClick={() => setEditingId(null)}>Cancelar</button>
+              </>
+            ) : (
+              <>
+                <div className="estrelas">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} color={i < a.rating ? 'orange' : 'lightgray'} />
+                  ))}
+                </div>
+                <p className="comentario">{a.comentario}</p>
+              </>
+            )}
+
+            <div className="reacoes">
+              <FaThumbsUp color="green" /> {a.likes}
+              <FaThumbsDown color="red" style={{ marginLeft: 10 }} /> {a.dislikes}
+            </div>
+
+            {currentUserId === a.user?.userid && editingId !== a.id && (
+              <div className="avaliacao-acoes">
+                <FaEdit
+                  onClick={() => handleEdit(a)}
+                  style={{ cursor: 'pointer', marginRight: '10px', color: '#007bff' }}
+                />
+                <FaTrash
+                  onClick={() => {
+                    setModalData(a);
+                    setShowModal(true);
+                  }}
+                  style={{ cursor: 'pointer', color: 'red' }}
+                />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)} title="Confirmar exclusão">
+          <p>Deseja realmente excluir sua avaliação?</p>
+          <button onClick={() => handleDelete(modalData.id)}>Sim</button>
+          <button onClick={() => setShowModal(false)}>Cancelar</button>
+        </Modal>
+      )}
+    </div>
+  );
+};
+
+export default AvaliacoesPlayStore;
+
+
+const handleLikeDislike = async (postid, tipo) => {
+  try {
+    const res = await fetch('http://localhost/t1/api/like_dislike_review.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userid: currentUserId,
+        postid,
+        tipo,
+      }),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      // Atualiza interface de forma otimista
+      setAvaliacoes((prev) =>
+        prev.map((a) => {
+          if (a.id === postid) {
+            let likes = a.likes;
+            let dislikes = a.dislikes;
+
+            if (tipo === 'like') {
+              likes += 1;
+              if (a.reacao === 'dislike') dislikes -= 1;
+            } else {
+              dislikes += 1;
+              if (a.reacao === 'like') likes -= 1;
+            }
+
+            return { ...a, likes, dislikes, reacao: tipo };
+          }
+          return a;
+        })
+      );
+    } else {
+      alert(result.error || 'Erro ao reagir.');
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Erro na conexão.');
+  }
+};
+
+
+
+
+if (Array.isArray(data) && data.length > 0) {
+          const totalRatings = data.length;
+          const totalScore = data.reduce((sum, a) => sum + a.rating, 0);
+          setAverageRating((totalScore / totalRatings).toFixed(1));
+
+          const counts = [0, 0, 0, 0, 0];
+          data.forEach(a => counts[a.rating - 1]++);
+          setRatingCounts(counts);
+        } else {
+          setAverageRating(0);
+          setRatingCounts([0, 0, 0, 0, 0]);
+        }
+
+
+
+
+
+
+//
+
+Olá! Aqui é do T1emprego, o seu espaço social para conectar serviços técnicos e profissionais. Sentimos sua falta por aqui! Muitas oportunidades e clientes aguardam você para crescer junto. Venha se reconectar e mostrar seu talento! 💼✨
+
+
+Versão Informal
+Oi! Aqui é do T1emprego, o seu app para se conectar com quem precisa de serviços técnicos e profissionais. A gente sente sua falta! Tem muita oportunidade e cliente esperando por você. Volta pra mostrar seu talento e crescer com a gente! 🚀💼
+
+Versão Formal
+Prezado(a), aqui é do T1emprego, a plataforma social que conecta prestadores de serviços técnicos e profissionais a quem precisa. Notamos sua ausência e gostaríamos de convidá-lo(a) a voltar para conferir novas oportunidades e ampliar sua rede. Conte conosco para impulsionar sua carreira! 🌟
+
+
+
+
+
+
+
+
+
+
+
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
+
+
+      </form>

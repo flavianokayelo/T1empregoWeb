@@ -1,0 +1,165 @@
+/* Container principal */
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+}
+
+.fotos-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 16px 10px;
+  box-sizing: border-box;
+  margin-top: 160px !important;
+  margin-bottom: 120px !important;
+}
+
+.fotos-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.fotos-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Grid responsivo mobile first */
+.fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.fotos-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.fotos-card:focus,
+.fotos-card:hover {
+  transform: scale(1.03);
+  outline: none;
+}
+
+.fotos-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+/* Mensagem fim da galeria */
+.fotos-end {
+  margin-top: 20px;
+  text-align: center;
+  color: #777;
+}
+
+/* Modal - sobreposição */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Modal conteúdo */
+.modal-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* Botão fechar */
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Imagem modal responsiva */
+.modal-image {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Media query para telas maiores */
+@media(min-width: 768px) {
+  .fotos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .fotos-image {
+    height: 200px;
+  }
+
+  .modal-content {
+    max-width: 70vw;
+    max-height: 80vh;
+  }
+}
+
+@media(min-width: 1200px) {
+  .fotos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .fotos-image {
+    height: 220px;
+  }
+
+  .modal-content {
+    max-width: 50vw;
+    max-height: 75vh;
+  }
+}
+
+@media (max-width:720px){
+  .fotos-container{
+    margin-top: 3rem !important;
+    padding: 0.8rem !important;
+   
+  }
+  .fotos-card{
+    border: 1px solid var(--secondary-color) !important;
+  }
+  .fotos-image{
+    object-fit: contain !important;
+  }
+}

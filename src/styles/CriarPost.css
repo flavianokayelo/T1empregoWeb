@@ -1,0 +1,122 @@
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+}
+
+.criar-post-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fefefe;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  margin-top: 220px !important;
+  margin-bottom: 120px !important;
+}
+
+.criar-post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.criar-post-input,
+.criar-post-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.criar-post-file {
+  margin-bottom: 15px;
+}
+
+.criar-post-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.criar-post-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.criar-post-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.criar-post-button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .criar-post-container {
+    margin: 20px 10px;
+      margin-top: 120px;
+  margin-bottom: 120px;
+
+  }
+
+  .criar-post-preview {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Spinner moderno */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #2f6bd1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.criar-post-preview-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.criar-post-remove {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  line-height: 20px;
+}

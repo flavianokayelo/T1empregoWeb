@@ -1,0 +1,26 @@
+ .postItemImg{
+       border: none;   
+       object-fit: contain !important;
+       min-height: 30rem !important;
+    }
+.Avatar{
+    cursor: pointer !important;
+}
+@media(max-width:720px){
+    .CarroselWrapper{
+        padding: 0 !important;
+        border: none;
+    }
+    .postItemContainer{
+        padding: 0.2rem !important;
+        border: none;
+
+    }
+    .ConatneiPostMon{
+        border: none; 
+    }
+    .postItemImg{ 
+       object-fit: contain !important;
+       min-height: 30rem !important;
+    }
+}

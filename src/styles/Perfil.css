@@ -1,0 +1,394 @@
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #225b79;
+}
+
+
+
+.online {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.online.ativo {
+  color: green;
+  font-weight: bold;
+}
+
+/* Container principal */
+.container {
+  background: #f9f9f9;
+  padding-bottom: 40px;
+  margin-top: 60px !important;
+  margin-bottom: 100px;
+  padding: 0 20px; /* Padding lateral */
+}
+
+.cover-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* Capa */
+.coverC {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Avatar Container */
+.avatarC {
+  position: absolute;
+  bottom: -60px; /* Para que o avatar sobreponha a capa */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Avatar */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+
+/* Seção do perfil */
+.profile-section {
+  text-align: center;
+  margin-top: 70px;
+  padding: 0 20px;
+}
+
+/* Texto da profissão */
+.profession {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Seções de informações */
+.section {
+  margin: 20px 0;
+  text-align: left;
+}
+
+/* Container de informações */
+.info-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Linha de informações */
+.info-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 14px;
+}
+
+/* Linha de estatísticas */
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* Estilo das estatísticas */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat span {
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+/* Linha de ações */
+.actions-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Botão de ação */
+.action-button {
+  flex: 1;
+  background-color: #4285f4;
+  color: white;
+  padding: 10px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Botão de ação com largura total */
+.action-button-full {
+  width: 100%;
+}
+/* recomendacoes button*/
+.action-button.destaque {
+  background-color: #f39c12;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.action-button.destaque:hover {
+  background-color: #f4d03f;
+  transform: scale(1.05);
+}
+
+/* Responsividade: Ajuste para telas menores */
+@media (max-width: 720px) {
+  .container {
+    padding: 0 10px; /* Reduzir o padding lateral para telas pequenas */
+  }
+
+  .cover-container {
+    height: 180px; /* Reduzir a altura da capa em telas menores */
+    display: flex;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    bottom: -45px; /* Ajustar a posição do avatar */
+  }
+
+  .profile-section {
+    margin-top: 50px; /* Reduzir a margem superior */
+  }
+
+  .stats-row {
+    flex-direction: row; /* Mudar a direção para coluna em telas pequenas */
+    align-items: center;
+  }
+  /* Linha de ações */
+.actions-row {
+  margin-top: 0 !important;
+  gap: 5px !important;
+}
+
+.action-RowMobile{
+   display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important; 
+}
+
+  .action-button {
+    width: 100% !important; /* Tornar o botão de ação full width em telas pequenas */
+    margin: 3px 0 !important; /* Reduzir o espaçamento entre os botões */
+  }
+
+
+}
+
+/* Spinner moderno */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #2f6bd1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal ver foto d perfil intero*/
+
+.modal-overlayFP {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-contentFP {
+  max-width: 90%;
+  max-height: 90%;
+  padding: 0;
+}
+
+.full-avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Outras boas vindas */
+
+/* Estilo de fundo moderno e amigável */
+.tela-inicial {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #cce3ff, #e6f7ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Cartão central */
+.card-bemvindo {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Título */
+.card-bemvindo h1 {
+  font-size: 2rem;
+  color: #1a237e;
+  margin-bottom: 20px;
+}
+
+/* Destaque do nome do app */
+.card-bemvindo .destaque {
+  color: #1976d2;
+}
+
+/* Parágrafo */
+.card-bemvindo p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Botão */
+.botao {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #0d47a1;
+}
+
+/* Responsividade */
+@media (max-width: 720px) {
+
+  * {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+.info-row{
+  margin: 0.6rem !important;
+}
+.profile-section{
+  padding: 0.8rem !important;
+  margin-top: 4rem !important;
+}
+.stats-row{
+    margin: 0.6rem !important;
+}
+.stat{
+    padding: 0.9rem !important;
+}
+.actions-row{
+    padding: 0.8rem !important;
+     margin-top: 0 !important;
+}
+.action-button{
+  padding: 0.4rem !important;
+}
+
+.card-bemvindo {
+    padding: 30px 20px;
+   
+  }
+
+  .card-bemvindo h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-bemvindo p {
+    font-size: 1rem;
+  }
+
+  .BtnModal{
+    padding: 0.8rem !important;
+    margin-top: 1rem !important;
+  }
+
+}
+
+/* modal foto de perfil*/
+.modal-overlayFPPerfil {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-contentFPPerfil {
+  max-width: 90%;
+  max-height: 90%;
+  padding: 0;
+}
+
+.full-avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}

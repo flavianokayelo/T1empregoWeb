@@ -1,0 +1,182 @@
+/* Cores principais */
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #627b88;
+}
+
+.container {
+  padding: 20px;
+  background-color: #f9fafb;
+  flex-grow: 1;
+}
+
+.desktop-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.text-box {
+  flex: 1;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 10px;
+}
+
+.container-title {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  margin-bottom: 35px;
+  padding: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #111111;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.input {
+  background-color: #fff;
+  border: 1.5px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.forgot {
+  background-color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+.createAccount{
+  border: none;
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+}
+.create-account {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.plus {
+  font-size: 20px;
+  margin-right: 6px;
+  color: var(--secondary-color);
+}
+
+.create-text {
+  color: var(--secondary-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+.create-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Spinner moderno */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #2f6bd1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Centralizar conteúdo em telas maiores */
+@media (min-width: 768px) {
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+   padding: 0.8rem !important;
+  }
+  .input,button{
+    padding: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .Containertitle{
+    margin-top: 2rem !important;
+  }
+}
+/*Visualizar Senha*/
+.input-password-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input-password-wrapper .input {
+  width: 100%;
+  padding-right: 40px; /* espaço pro ícone */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  margin-bottom: 0.9rem;
+}
+

@@ -1,0 +1,116 @@
+/* PrestadorServico.css */
+
+.prestador-container {
+  max-width: 600px;
+  margin: 180px auto 100px;
+  padding: 16px;
+  margin-top: 140px !important;
+}
+
+.prestador-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.prestador-content {
+  padding: 15px 10px;
+  margin-top: 14px;
+}
+
+.prestador-searchbox {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.prestador-searchbox input {
+  margin-left: 10px;
+  flex: 1;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.prestador-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.prestador-info {
+  text-align: center;
+  color: #555;
+  margin-top: 10px;
+}
+
+.prestador-searchbox{
+  position: fixed;
+  top: 6rem; /* Altura do Header */
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  padding: 0.8rem !important;
+}
+.prestador-title{
+  margin-top: 5rem !important;
+}
+
+@media (max-width:720px){
+  .prestador-container{
+    padding: 0.8rem !important;
+  }
+  .contaner-Buscar{
+    margin-bottom: 2rem !important;
+  }
+  .prestador-searchbox input{
+    padding: 0.5rem !important;
+    margin-top: 1rem !important;
+  }
+  .prestador-title{
+    margin-bottom: 1rem !important;
+  }
+  .prestador-list{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 721px) {
+  .prestador-searchbox {
+    position: fixed;
+  top: 13rem !important; /* Altura do Header */
+  left: 17.50rem !important;
+  right: 19.50rem !important;
+  z-index: 100;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem !important;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8rem !important;
+  }
+
+  .prestador-title {
+    margin-top: 0 !important;
+  }
+
+  .prestador-content {
+    margin-top: 10rem !important;
+  }
+}

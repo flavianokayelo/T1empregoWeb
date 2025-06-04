@@ -1,0 +1,22 @@
+@media (max-width:720px){
+    .ContainerMobileAllSer{
+        padding: 0.8rem !important;
+        margin-top: 4rem !important;
+    }
+    .ContentMobile{
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .SAerMobile{
+       
+    }
+    .SAerMobile input{
+        padding: 0.5rem !important;
+        margin-top: 1rem !important;
+    }
+    .ServicoListaMobile {
+     margin-top: 2rem !important;
+}
+
+
+}

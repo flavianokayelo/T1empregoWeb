@@ -1,0 +1,21 @@
+@media (max-width:720px){
+    .CardContair{
+        margin-bottom: 0.3rem !important;
+        padding: 0.5rem !important;
+        background-color: white !important;
+    }
+    .cardInfo{
+        margin-left: 0.3rem !important;
+        
+    }
+}
+
+.online {
+  color: gray !important;
+  font-size: 0.8rem !important;
+}
+
+.online.ativo {
+  color: green !important;
+  font-weight: bold !important;
+}

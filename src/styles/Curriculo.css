@@ -1,0 +1,180 @@
+/* Estilos base */
+.curriculo-container {
+  max-width: 700px;
+  margin: 100px auto 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+/* Seção superior */
+.curriculo-top-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.curriculo-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #225b79;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.curriculo-name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.curriculo-profession {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.curriculo-address {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.curriculo-bi-button {
+  font-size: 16px;
+  color: #225b79;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/* Seções */
+.curriculo-section {
+  margin-bottom: 20px;
+}
+
+.curriculo-section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #225b79;
+  margin-bottom: 10px;
+}
+
+.curriculo-text {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Botões */
+.curriculo-cert-button {
+  margin-top: 10px;
+  background-color: #4285F4;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Modal */
+.curriculo-modal-bg {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.curriculo-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+}
+
+.curriculo-modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #225b79;
+  margin-bottom: 10px;
+}
+
+.curriculo-modal-bi {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.curriculo-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #225b79;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Loading */
+.curriculo-loading-bg {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+/*Mobile Curriculo*/
+@media (max-width:720px){
+  .CurriculoMobile{
+    margin-top: 4rem !important;
+    padding: 0.8rem !important;
+    margin-bottom: 4rem !important;
+  }
+  .shoeCu{
+    margin: 1rem !important;
+  }
+  .ModalBIVer{
+    padding: 1rem !important;
+    
+  }
+  .VerBIbuton{
+    padding: 0.6rem !important;
+    margin: 1rem !important;
+  }
+  .about_me{
+    text-align: justify !important;
+    text-rendering: optimizeLegibility !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .FormacaoSection p{
+     font-weight: bolder !important;
+     margin: 1rem !important;
+  }
+  .FormacaoSection button{
+    padding: 0.5rem !important;
+  }
+  .ProfissionalEx{
+    margin-top: 1rem !important;
+  }
+  .ProfissionalEx h3{
+    margin-bottom: 1rem !important;
+  }
+  .SkillC h3{
+     margin-bottom: 1rem !important;
+  }
+}

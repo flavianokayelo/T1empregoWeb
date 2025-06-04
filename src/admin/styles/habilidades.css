@@ -1,0 +1,136 @@
+.admin-main {
+  padding: 2rem;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #225b79;
+  margin-bottom: 1.5rem;
+}
+
+.form-habilidade {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.form-habilidade input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-salvar {
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-salvar:hover {
+  background-color: #3367d6;
+}
+
+.tabela-responsive {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.tabela-habilidades {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-habilidades th,
+.tabela-habilidades td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.tabela-habilidades th {
+  background-color: #225b79;
+  color: white;
+  font-weight: 600;
+}
+
+.tabela-habilidades tr:nth-child(even) {
+  background-color: #f0f4f8;
+}
+
+.tabela-habilidades tr:hover {
+  background-color: #e1ecf4;
+}
+
+.btn-editar, .btn-excluir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.btn-editar:hover {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.btn-excluir:hover {
+  color: #e74c3c;
+  transform: scale(1.1);
+}
+
+.alerta {
+  background: #d4edda;
+  color: #155724;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.paginacao {
+  margin-top: 1rem;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pagina {
+  padding: 0.4rem 0.8rem;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagina:hover {
+  background-color: #c2c2c2;
+}
+
+.pagina.ativa {
+  background-color: #4285F4;
+  color: white;
+}
