@@ -1,1 +1,3 @@
-# T1empregoWeb
+# T1empregoweb
+
+Esse projeto é uma plataforma de empregos...
